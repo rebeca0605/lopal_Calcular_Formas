@@ -1,6 +1,10 @@
 package br.sp.senai.jandira.calcular_formas;
 
+import java.nio.file.FileSystemAlreadyExistsException;
+import java.util.Scanner;
+
 import br.sp.senai.jandira.calcular_formas.model.Circunferencia;
+import br.sp.senai.jandira.calcular_formas.model.Menu;
 import br.sp.senai.jandira.calcular_formas.model.Quadrado;
 import br.sp.senai.jandira.calcular_formas.model.Retangulo;
 import br.sp.senai.jandira.calcular_formas.model.Trapezio;
@@ -8,11 +12,22 @@ import br.sp.senai.jandira.calcular_formas.model.Triangulo;
 
 public class main {
 	
-	public static void main(String[] args) {
+	public static void main (String[] args) {
+		
+		Menu.criarMenu();
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Qual é a altura do retângulo? ");
+		double valorAltura = leitor.nextDouble();
+		
+		System.out.print("Qual é a base do retângulo? ");
+		double valorBase = leitor.nextDouble();
+		
 		Retangulo r1 = new Retangulo();
 		
-		r1.setBase(14);
-		r1.setAltura(13);
+		r1.setBase(valorBase);
+		r1.setAltura(valorAltura);
 		r1.mostrarDados();
 		
 		Circunferencia c1 = new Circunferencia();
